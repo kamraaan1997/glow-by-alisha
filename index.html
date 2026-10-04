@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glow by Alisha | Luxury Beauty & Hair Salon</title>
-    <meta name="description" content="Glow by Alisha - Professional Hair & Beauty Services in Raigarh, Chhattisgarh. Home Service Available. Call 8962401356.">
+    <meta name="description" content="Glow by Alisha - Professional Hair & Beauty Services in Raigarh, Chhattisgarh. Home Service Available. Call or WhatsApp 8962401356.">
     
     <!-- Google Fonts for royal luxury typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,6 +26,11 @@
                         'brand-gold-bright': '#ffd700',
                         'brand-gold-muted': '#b38728',
                         'brand-gold-light': '#fff3c4',
+                        'whatsapp-green': '#25D366',
+                        'whatsapp-dark': '#128C7E',
+                        'instagram-pink': '#E1306C',
+                        'youtube-red': '#FF0000',
+                        'facebook-blue': '#1877F2'
                     },
                     fontFamily: {
                         cinzel: ['"Cinzel"', 'serif'],
@@ -39,17 +44,17 @@
                         },
                         floatSlow: {
                             '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-10px)' },
+                            '50%': { transform: 'translateY(-8px)' },
                         },
                         pulseGlow: {
                             '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
-                            '50%': { opacity: '0.8', transform: 'scale(1.05)' },
+                            '50%': { opacity: '0.85', transform: 'scale(1.05)' },
                         }
                     },
                     animation: {
                         shimmer: 'shimmer 4s ease-in-out infinite',
-                        float: 'floatSlow 6s ease-in-out infinite',
-                        glow: 'pulseGlow 4s ease-in-out infinite',
+                        float: 'floatSlow 5s ease-in-out infinite',
+                        glow: 'pulseGlow 3s ease-in-out infinite',
                     }
                 }
             }
@@ -83,21 +88,11 @@
             border: 1.5px solid transparent;
         }
 
-        .gold-border-glow:hover {
-            box-shadow: 0 0 25px rgba(228, 182, 85, 0.35);
-        }
-
         .glass-nav {
             background: rgba(12, 4, 18, 0.88);
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
             border-bottom: 1px solid rgba(228, 182, 85, 0.22);
-        }
-
-        /* Sparkle dots simulation */
-        .sparkle-overlay {
-            background-image: radial-gradient(circle, rgba(255, 215, 0, 0.25) 1px, transparent 1px);
-            background-size: 40px 40px;
         }
 
         /* Custom Scrollbar */
@@ -115,17 +110,18 @@
 </head>
 <body class="antialiased font-sans flex flex-col min-h-screen relative overflow-x-hidden selection:bg-brand-gold selection:text-black">
 
+    <!-- Navigation Header -->
     <header class="fixed w-full top-0 z-50 glass-nav transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- Brand Brand Logo & Title -->
+                <!-- Brand Logo & Title -->
                 <a href="#home" class="flex items-center gap-3 group">
                     <div class="relative w-12 h-12 rounded-full overflow-hidden border-2 border-brand-gold shadow-[0_0_15px_rgba(228,182,85,0.45)] group-hover:scale-105 transition-transform duration-300">
                         <img 
                             src="icon.jpeg" 
-                            alt="Glow by Alisha Emblem" 
-                            class="w-full h-full object-cover object-top"
-                            onerror="this.src='icon.jpeg'; this.onerror=function(){this.src='https://placehold.co/100x100/150620/ffd700?text=Glow'}"
+                            alt="Glow by Alisha Logo" 
+                            class="w-full h-full object-cover"
+                            onerror="this.src='price%20list_2.jpeg'; this.onerror=function(){this.src='https://placehold.co/100x100/150620/ffd700?text=Glow'}"
                         >
                     </div>
                     <div>
@@ -135,7 +131,7 @@
                 </a>
                 
                 <!-- Desktop Navigation Menu -->
-                <nav class="hidden md:flex space-x-7 text-sm font-medium tracking-wide">
+                <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium tracking-wide">
                     <a href="#home" class="text-gray-300 hover:text-brand-gold transition-colors">Home</a>
                     <a href="#services" class="text-gray-300 hover:text-brand-gold transition-colors">Services</a>
                     <a href="#pricelist" class="text-gray-300 hover:text-brand-gold transition-colors flex items-center gap-1.5 font-semibold text-brand-gold-light">
@@ -143,20 +139,38 @@
                         Price List
                     </a>
                     <a href="#specials" class="text-gray-300 hover:text-brand-gold transition-colors">Special Offers</a>
+                    <a href="#social" class="text-gray-300 hover:text-brand-gold transition-colors">Social</a>
                     <a href="#contact" class="text-gray-300 hover:text-brand-gold transition-colors">Contact</a>
                 </nav>
                 
-                <!-- Actions -->
+                <!-- Social media header icons & Call/WhatsApp CTA -->
                 <div class="flex items-center gap-3">
-                    <a href="tel:8962401356" class="hidden sm:inline-flex items-center gap-2 text-xs font-semibold px-4 py-2 border border-brand-gold/60 text-brand-gold rounded-full hover:bg-brand-gold/10 transition">
+                    <!-- Quick Social Icon Links -->
+                    <div class="hidden sm:flex items-center gap-2 border-r border-brand-gold/30 pr-3 mr-1">
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/glowb_yalisha" target="_blank" rel="noopener noreferrer" title="Follow us on Instagram" class="w-8 h-8 rounded-full border border-brand-gold/40 flex items-center justify-center text-gray-300 hover:text-instagram-pink hover:border-instagram-pink transition-colors">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <!-- YouTube -->
+                        <a href="https://www.youtube.com/@glowb_yalisha" target="_blank" rel="noopener noreferrer" title="Subscribe on YouTube" class="w-8 h-8 rounded-full border border-brand-gold/40 flex items-center justify-center text-gray-300 hover:text-youtube-red hover:border-youtube-red transition-colors">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        </a>
+                        <!-- Facebook -->
+                        <a href="https://www.facebook.com/share/1EuYFzdBqs" target="_blank" rel="noopener noreferrer" title="Connect on Facebook" class="w-8 h-8 rounded-full border border-brand-gold/40 flex items-center justify-center text-gray-300 hover:text-facebook-blue hover:border-facebook-blue transition-colors">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                    </div>
+
+                    <a href="tel:8962401356" class="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-2 border border-brand-gold/60 text-brand-gold rounded-full hover:bg-brand-gold/10 transition">
                         <span>📞</span> 8962401356
                     </a>
-                    <a href="#booking" class="px-5 py-2.5 bg-gradient-to-r from-brand-gold-muted via-brand-gold to-brand-gold-bright text-brand-black rounded-full font-bold text-xs uppercase tracking-wider shadow-[0_0_20px_rgba(228,182,85,0.4)] hover:shadow-[0_0_30px_rgba(255,215,0,0.6)] hover:scale-105 transition duration-300">
+                    
+                    <a href="#booking" class="px-4 sm:px-5 py-2 sm:py-2.5 bg-gradient-to-r from-brand-gold-muted via-brand-gold to-brand-gold-bright text-brand-black rounded-full font-bold text-xs uppercase tracking-wider shadow-[0_0_20px_rgba(228,182,85,0.4)] hover:shadow-[0_0_30px_rgba(255,215,0,0.6)] hover:scale-105 transition duration-300">
                         Book Now
                     </a>
                     
                     <!-- Mobile Hamburger -->
-                    <button id="mobileMenuBtn" aria-label="Toggle Menu" class="md:hidden text-brand-gold hover:text-white p-2 focus:outline-none">
+                    <button id="mobileMenuBtn" aria-label="Toggle Menu" class="lg:hidden text-brand-gold hover:text-white p-2 focus:outline-none">
                         <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
@@ -166,19 +180,35 @@
         </div>
 
         <!-- Mobile Drawer -->
-        <div id="mobileMenu" class="hidden md:hidden bg-brand-dark/95 border-b border-brand-gold/30 px-6 py-5 space-y-4 text-center">
+        <div id="mobileMenu" class="hidden lg:hidden bg-brand-dark/95 border-b border-brand-gold/30 px-6 py-5 space-y-4 text-center">
             <a href="#home" class="mobile-item block text-gray-200 hover:text-brand-gold text-base py-1">Home</a>
             <a href="#services" class="mobile-item block text-gray-200 hover:text-brand-gold text-base py-1">Services</a>
             <a href="#pricelist" class="mobile-item block text-brand-gold font-bold text-base py-1">✨ Full Price List</a>
             <a href="#specials" class="mobile-item block text-gray-200 hover:text-brand-gold text-base py-1">Special Offers & Packages</a>
+            <a href="#social" class="mobile-item block text-gray-200 hover:text-brand-gold text-base py-1">Follow Our Socials</a>
             <a href="#booking" class="mobile-item block text-gray-200 hover:text-brand-gold text-base py-1">Book Appointment</a>
             <a href="#contact" class="mobile-item block text-gray-200 hover:text-brand-gold text-base py-1">Location & Contact</a>
+            
+            <!-- Mobile Social Icons Row -->
+            <div class="flex justify-center items-center gap-4 py-2 border-t border-b border-brand-gold/20">
+                <a href="https://www.instagram.com/glowb_yalisha" target="_blank" rel="noopener noreferrer" class="p-2 text-instagram-pink bg-brand-purple rounded-full border border-brand-gold/30">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <a href="https://www.youtube.com/@glowb_yalisha" target="_blank" rel="noopener noreferrer" class="p-2 text-youtube-red bg-brand-purple rounded-full border border-brand-gold/30">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+                <a href="https://www.facebook.com/share/1EuYFzdBqs" target="_blank" rel="noopener noreferrer" class="p-2 text-facebook-blue bg-brand-purple rounded-full border border-brand-gold/30">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+            </div>
+
             <a href="tel:8962401356" class="block w-full text-center py-2.5 bg-brand-gold text-brand-black rounded-full font-bold text-sm">
-                Call 8962401356
+                📞 Call 8962401356
             </a>
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section id="home" class="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden">
         <!-- Floating Ambient Glows -->
         <div class="absolute top-16 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-brand-gold/15 rounded-full blur-[140px] pointer-events-none"></div>
@@ -224,21 +254,27 @@
                 </div>
             </div>
 
-            <!-- CTA Buttons -->
+            <!-- CTA Buttons - BUTTON 1: "WhatsApp" with official WhatsApp icon -->
             <div class="flex flex-wrap items-center justify-center gap-4">
-                <a href="#pricelist" class="px-8 py-3.5 rounded-full bg-gradient-to-r from-brand-gold via-brand-gold-bright to-brand-gold text-brand-black font-bold text-sm uppercase tracking-wider shadow-[0_0_25px_rgba(228,182,85,0.4)] hover:scale-105 transition duration-300 flex items-center gap-2">
+                <a href="#pricelist" class="px-7 py-3.5 rounded-full bg-gradient-to-r from-brand-gold via-brand-gold-bright to-brand-gold text-brand-black font-bold text-sm uppercase tracking-wider shadow-[0_0_25px_rgba(228,182,85,0.4)] hover:scale-105 transition duration-300 flex items-center gap-2">
                     <span>📜</span> View Full Price List
                 </a>
-                <a href="#booking" class="px-8 py-3.5 rounded-full border border-brand-gold text-brand-gold hover:bg-brand-gold/10 font-bold text-sm uppercase tracking-wider transition duration-300 flex items-center gap-2">
+                <a href="#booking" class="px-7 py-3.5 rounded-full border border-brand-gold text-brand-gold hover:bg-brand-gold/10 font-bold text-sm uppercase tracking-wider transition duration-300 flex items-center gap-2">
                     <span>📅</span> Book Appointment
                 </a>
-                <a href="https://wa.me/918962401356?text=Hi%20Alisha,%20I%20would%20like%20to%20book%20an%20appointment!" target="_blank" class="px-6 py-3.5 rounded-full bg-emerald-600/90 hover:bg-emerald-500 text-white font-bold text-sm tracking-wider transition duration-300 flex items-center gap-2 shadow-lg">
-                    <span>💬</span> WhatsApp
+                
+                <!-- WHATSAPP BUTTON 1: "WhatsApp" -->
+                <a href="https://wa.me/918962401356?text=Hi%20Alisha!%20I%20would%20like%20to%20inquire%20about%20your%20beauty%20services." target="_blank" rel="noopener noreferrer" class="px-7 py-3.5 rounded-full bg-whatsapp-green hover:bg-[#20ba59] text-white font-bold text-sm tracking-wider transition duration-300 flex items-center gap-2 shadow-[0_0_20px_rgba(37,211,102,0.4)] hover:scale-105">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                    </svg>
+                    <span>WhatsApp</span>
                 </a>
             </div>
         </div>
     </section>
 
+    <!-- Services Section -->
     <section id="services" class="py-16 bg-brand-dark/70 relative border-t border-brand-gold/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-14">
@@ -250,7 +286,6 @@
             </div>
 
             <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 sm:gap-4">
-                <!-- Service Badges -->
                 <div class="gold-border-gradient rounded-xl p-4 text-center hover:-translate-y-1 transition duration-300">
                     <div class="text-3xl mb-2">💇‍♀️</div>
                     <h3 class="font-cinzel text-xs font-bold text-brand-gold">Haircut</h3>
@@ -295,6 +330,7 @@
         </div>
     </section>
 
+    <!-- Price List Section -->
     <section id="pricelist" class="py-20 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12">
@@ -305,7 +341,7 @@
                     Official <span class="gold-metallic-text font-serif">Price List</span>
                 </h2>
                 <p class="text-gray-300 text-sm sm:text-base mt-3">
-                    Click the price list card below to inspect in high-resolution, or browse the interactive menu breakdown.
+                    Click the price list card below to inspect in high-resolution, or browse the complete rate catalogue.
                 </p>
             </div>
 
@@ -315,12 +351,11 @@
                 <!-- Left: Rate Card Image with Click to Zoom Modal -->
                 <div class="lg:col-span-6 flex flex-col items-center">
                     <div class="relative group cursor-pointer w-full max-w-lg rounded-2xl overflow-hidden border-2 border-brand-gold/60 shadow-[0_0_40px_rgba(212,175,55,0.25)] bg-brand-purple"
-                         onclick="openModal('price_list.jpeg', 'Glow by Alisha Official Rate Card')">
+                         onclick="openModal('price list_2.jpeg', 'Glow by Alisha Official Rate Card')">
                         
-                        <!-- Primary Image with multiple robust fallbacks for local runtime -->
                         <img 
                             id="mainPriceListImg"
-                            src="price_list.jpeg" 
+                            src="price%20list_2.jpeg" 
                             alt="Glow by Alisha Official Price List"
                             class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500 block"
                             onerror="handlePriceImageFallback(this)"
@@ -342,7 +377,7 @@
 
                     <!-- Quick buttons below image -->
                     <div class="flex items-center gap-3 mt-4">
-                        <button onclick="openModal('price_list.jpeg', 'Glow by Alisha Official Rate Card')" class="px-4 py-2 rounded-lg border border-brand-gold/50 text-brand-gold hover:bg-brand-gold/10 text-xs font-cinzel flex items-center gap-1.5 transition">
+                        <button onclick="openModal('price list_2.jpeg', 'Glow by Alisha Official Rate Card')" class="px-4 py-2 rounded-lg border border-brand-gold/50 text-brand-gold hover:bg-brand-gold/10 text-xs font-cinzel flex items-center gap-1.5 transition">
                             <span>🔍</span> Fullscreen View
                         </button>
                         <a href="tel:8962401356" class="px-4 py-2 rounded-lg bg-brand-gold text-brand-black text-xs font-bold font-cinzel hover:bg-brand-gold-bright transition">
@@ -485,6 +520,7 @@
         </div>
     </section>
 
+    <!-- Special Offers & Banners Section -->
     <section id="specials" class="py-20 bg-brand-dark/80 relative border-t border-brand-gold/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-14">
@@ -643,6 +679,52 @@
         </div>
     </section>
 
+    <!-- Dedicated Social Media Connect Section -->
+    <section id="social" class="py-16 bg-brand-purple/40 relative border-t border-brand-gold/20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="text-xs uppercase tracking-widest font-cinzel text-brand-gold">Stay Glamorous & Inspired</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-1">
+                Connect With Us On <span class="gold-metallic-text font-serif">Social Media</span>
+            </h2>
+            <p class="text-gray-300 text-xs sm:text-sm mt-2 max-w-xl mx-auto">
+                Follow our official handles for the latest bridal transformations, hair care tutorials, and client glow-ups!
+            </p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10">
+                <!-- Instagram Card -->
+                <a href="https://www.instagram.com/glowb_yalisha" target="_blank" rel="noopener noreferrer" class="gold-border-gradient rounded-2xl p-6 group hover:-translate-y-1.5 transition duration-300 flex flex-col items-center">
+                    <div class="w-14 h-14 rounded-full bg-gradient-to-tr from-yellow-500 via-pink-600 to-purple-600 flex items-center justify-center text-white mb-4 shadow-[0_0_20px_rgba(225,48,108,0.4)] group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </div>
+                    <h3 class="font-cinzel font-bold text-white text-base">Instagram</h3>
+                    <p class="text-xs text-brand-gold mt-1">@glowb_yalisha</p>
+                    <span class="mt-4 px-4 py-1.5 rounded-full border border-brand-gold/50 text-brand-gold text-xs font-semibold group-hover:bg-brand-gold group-hover:text-brand-black transition">Follow Us</span>
+                </a>
+
+                <!-- YouTube Card -->
+                <a href="https://www.youtube.com/@glowb_yalisha" target="_blank" rel="noopener noreferrer" class="gold-border-gradient rounded-2xl p-6 group hover:-translate-y-1.5 transition duration-300 flex flex-col items-center">
+                    <div class="w-14 h-14 rounded-full bg-youtube-red flex items-center justify-center text-white mb-4 shadow-[0_0_20px_rgba(255,0,0,0.4)] group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </div>
+                    <h3 class="font-cinzel font-bold text-white text-base">YouTube</h3>
+                    <p class="text-xs text-brand-gold mt-1">@glowb_yalisha</p>
+                    <span class="mt-4 px-4 py-1.5 rounded-full border border-brand-gold/50 text-brand-gold text-xs font-semibold group-hover:bg-brand-gold group-hover:text-brand-black transition">Subscribe Channel</span>
+                </a>
+
+                <!-- Facebook Card -->
+                <a href="https://www.facebook.com/share/1EuYFzdBqs" target="_blank" rel="noopener noreferrer" class="gold-border-gradient rounded-2xl p-6 group hover:-translate-y-1.5 transition duration-300 flex flex-col items-center">
+                    <div class="w-14 h-14 rounded-full bg-facebook-blue flex items-center justify-center text-white mb-4 shadow-[0_0_20px_rgba(24,119,242,0.4)] group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </div>
+                    <h3 class="font-cinzel font-bold text-white text-base">Facebook</h3>
+                    <p class="text-xs text-brand-gold mt-1">Glow by Alisha</p>
+                    <span class="mt-4 px-4 py-1.5 rounded-full border border-brand-gold/50 text-brand-gold text-xs font-semibold group-hover:bg-brand-gold group-hover:text-brand-black transition">Connect on FB</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Booking Section -->
     <section id="booking" class="py-20 relative">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="gold-border-gradient rounded-3xl p-6 sm:p-10 md:p-12 shadow-[0_0_50px_rgba(212,175,55,0.2)] bg-brand-dark/95 backdrop-blur-md">
@@ -726,8 +808,13 @@
                         <button type="submit" class="flex-1 py-3.5 px-6 rounded-xl bg-gradient-to-r from-brand-gold-muted via-brand-gold to-brand-gold-bright text-brand-black font-cinzel font-bold text-xs uppercase tracking-wider shadow-[0_0_25px_rgba(228,182,85,0.4)] hover:opacity-95 transition">
                             Confirm Appointment
                         </button>
-                        <button type="button" onclick="bookViaWhatsApp()" class="py-3.5 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-cinzel font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition shadow-lg">
-                            <span>💬</span> Book via WhatsApp
+                        
+                        <!-- WHATSAPP BUTTON 2: "Book via WhatsApp" -->
+                        <button type="button" onclick="bookViaWhatsApp()" class="py-3.5 px-6 rounded-xl bg-whatsapp-green hover:bg-[#20ba59] text-white font-cinzel font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2.5 transition shadow-[0_0_20px_rgba(37,211,102,0.4)] hover:scale-[1.02]">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                            </svg>
+                            <span>Book via WhatsApp</span>
                         </button>
                     </div>
                 </form>
@@ -741,7 +828,8 @@
         </div>
     </section>
 
-    <section id="contact" class="py-16 bg-brand-dark/90 border-t border-brand-gold/20">
+    <!-- Footer Section -->
+    <section id="contact" class="py-16 bg-brand-dark/95 border-t border-brand-gold/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left items-center">
                 
@@ -752,7 +840,7 @@
                             src="icon.jpeg" 
                             alt="Glow By Alisha Emblem" 
                             class="w-12 h-12 rounded-full border border-brand-gold object-cover"
-                            onerror="this.src='icon.jpeg'; this.onerror=function(){this.src='https://placehold.co/100x100/150620/ffd700?text=Glow'}"
+                            onerror="this.src='price%20list_2.jpeg'; this.onerror=function(){this.src='https://placehold.co/100x100/150620/ffd700?text=Glow'}"
                         >
                         <div>
                             <span class="font-serif text-xl font-bold gold-metallic-text">Glow by Alisha</span>
@@ -760,6 +848,19 @@
                         </div>
                     </div>
                     <p class="text-xs text-gray-400 italic font-serif">"Your Beauty, Our Priority ♡ Look Good, Feel Confident!"</p>
+                    
+                    <!-- Social icons row in footer -->
+                    <div class="flex items-center justify-center md:justify-start gap-3 mt-4">
+                        <a href="https://www.instagram.com/glowb_yalisha" target="_blank" rel="noopener noreferrer" title="Instagram" class="w-8 h-8 rounded-full border border-brand-gold/40 flex items-center justify-center text-gray-300 hover:text-instagram-pink hover:border-instagram-pink transition">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="https://www.youtube.com/@glowb_yalisha" target="_blank" rel="noopener noreferrer" title="YouTube" class="w-8 h-8 rounded-full border border-brand-gold/40 flex items-center justify-center text-gray-300 hover:text-youtube-red hover:border-youtube-red transition">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/share/1EuYFzdBqs" target="_blank" rel="noopener noreferrer" title="Facebook" class="w-8 h-8 rounded-full border border-brand-gold/40 flex items-center justify-center text-gray-300 hover:text-facebook-blue hover:border-facebook-blue transition">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Contact & Address -->
@@ -782,13 +883,18 @@
                     </p>
                 </div>
 
-                <!-- Call to action button box -->
+                <!-- Call to action button box - WHATSAPP BUTTON 3: "Chat on WhatsApp" -->
                 <div class="flex flex-col items-center md:items-end gap-3">
                     <a href="tel:8962401356" class="w-full sm:w-auto px-6 py-3 rounded-full bg-brand-gold text-brand-black font-cinzel font-bold text-xs uppercase tracking-wider shadow hover:bg-brand-gold-bright transition text-center">
-                        Call Salon Now
+                        📞 Call Salon Now
                     </a>
-                    <a href="https://wa.me/918962401356?text=Hello%20Glow%20By%20Alisha%20Salon,%20I%20have%20an%20inquiry%20regarding%20beauty%20services." target="_blank" class="w-full sm:w-auto px-6 py-3 rounded-full border border-brand-gold/60 text-brand-gold hover:bg-brand-gold/10 font-cinzel font-semibold text-xs tracking-wider transition text-center flex items-center justify-center gap-2">
-                        <span>💬</span> Chat on WhatsApp
+                    
+                    <!-- WHATSAPP BUTTON 3: "Chat on WhatsApp" -->
+                    <a href="https://wa.me/918962401356?text=Hello%20Glow%20By%20Alisha%20Salon!%20I%20would%20like%20to%20chat%20regarding%20beauty%20services." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-6 py-3 rounded-full bg-[#128C7E] hover:bg-whatsapp-green text-white font-cinzel font-semibold text-xs tracking-wider transition text-center flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(18,140,126,0.5)]">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                        </svg>
+                        <span>Chat on WhatsApp</span>
                     </a>
                 </div>
 
@@ -796,11 +902,18 @@
 
             <div class="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center text-[11px] text-gray-500">
                 <p>© <span id="currentYear"></span> Glow by Alisha Beauty & Hair Salon. All Rights Reserved.</p>
-                <p class="mt-2 sm:mt-0 text-brand-gold">Hygienic • Premium • Passionate</p>
+                <div class="flex items-center gap-4 mt-2 sm:mt-0 text-brand-gold text-xs">
+                    <a href="https://www.instagram.com/glowb_yalisha" target="_blank" rel="noopener noreferrer" class="hover:underline">Instagram</a>
+                    <span>•</span>
+                    <a href="https://www.youtube.com/@glowb_yalisha" target="_blank" rel="noopener noreferrer" class="hover:underline">YouTube</a>
+                    <span>•</span>
+                    <a href="https://www.facebook.com/share/1EuYFzdBqs" target="_blank" rel="noopener noreferrer" class="hover:underline">Facebook</a>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Lightbox Modal for Rate Card and Images -->
     <div id="imageModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-3 sm:p-6" onclick="closeModal()">
         <div class="relative max-w-4xl w-full max-h-[95vh] flex flex-col items-center" onclick="event.stopPropagation()">
             <!-- Close Button -->
@@ -827,8 +940,16 @@
         </div>
     </div>
 
+    <!-- Floating Quick WhatsApp Button on bottom right -->
+    <a href="https://wa.me/918962401356?text=Hello%20Alisha!%20I%20would%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp" class="fixed bottom-6 right-6 z-40 bg-whatsapp-green hover:bg-[#20ba59] text-white p-3.5 rounded-full shadow-[0_4px_25px_rgba(37,211,102,0.6)] hover:scale-110 transition duration-300 flex items-center gap-2 group">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+        <span class="hidden group-hover:inline-block font-cinzel text-xs font-bold whitespace-nowrap pr-1">Chat on WhatsApp</span>
+    </a>
+
     <script>
-        // Dynamic Copyright Year
+        // Set dynamic year
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
         // Mobile Nav Toggle
@@ -848,18 +969,16 @@
 
         // Price List Image Fallback handling logic
         function handlePriceImageFallback(imgElement) {
-            // First attempt unencoded or secondary uploaded variant
             if (!imgElement.getAttribute('data-tried-space')) {
                 imgElement.setAttribute('data-tried-space', 'true');
-                imgElement.src = 'price_list.jpeg';
+                imgElement.src = 'price list_2.jpeg';
                 return;
             }
             if (!imgElement.getAttribute('data-tried-first-gen')) {
                 imgElement.setAttribute('data-tried-first-gen', 'true');
-                imgElement.src = 'price_list.jpeg';
+                imgElement.src = 'price list.jpeg';
                 return;
             }
-            // Clean graphic placeholder fallback if file is still loading in sandbox
             imgElement.src = 'https://placehold.co/800x800/180624/e4b655?text=Glow+By+Alisha+Price+List';
         }
 
@@ -883,7 +1002,6 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Close on Escape Key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeModal();
         });
@@ -891,19 +1009,16 @@
         // Booking Form Handling
         function handleBookingSubmit(event) {
             event.preventDefault();
-            const name = document.getElementById('clientName').value;
             const phone = document.getElementById('clientPhone').value;
             const alertBox = document.getElementById('bookingAlert');
             const phoneHolder = document.getElementById('confirmedPhone');
 
             phoneHolder.textContent = phone;
             alertBox.classList.remove('hidden');
-
-            // Scroll gently to alert
             alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
 
-        // Instant Booking via WhatsApp redirect with prefilled client details
+        // WhatsApp Booking Dispatcher
         function bookViaWhatsApp() {
             const name = document.getElementById('clientName').value || 'Customer';
             const phone = document.getElementById('clientPhone').value || 'Not provided';
