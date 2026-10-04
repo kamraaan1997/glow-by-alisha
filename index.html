@@ -351,11 +351,11 @@
                 <!-- Left: Rate Card Image with Click to Zoom Modal -->
                 <div class="lg:col-span-6 flex flex-col items-center">
                     <div class="relative group cursor-pointer w-full max-w-lg rounded-2xl overflow-hidden border-2 border-brand-gold/60 shadow-[0_0_40px_rgba(212,175,55,0.25)] bg-brand-purple"
-                         onclick="openModal('price list_2.jpeg', 'Glow by Alisha Official Rate Card')">
+                         onclick="openModal('price_list.jpeg', 'Glow by Alisha Official Rate Card')">
                         
                         <img 
                             id="mainPriceListImg"
-                            src="price%20list_2.jpeg" 
+                            src="price_list.jpeg" 
                             alt="Glow by Alisha Official Price List"
                             class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500 block"
                             onerror="handlePriceImageFallback(this)"
@@ -377,7 +377,7 @@
 
                     <!-- Quick buttons below image -->
                     <div class="flex items-center gap-3 mt-4">
-                        <button onclick="openModal('price list_2.jpeg', 'Glow by Alisha Official Rate Card')" class="px-4 py-2 rounded-lg border border-brand-gold/50 text-brand-gold hover:bg-brand-gold/10 text-xs font-cinzel flex items-center gap-1.5 transition">
+                        <button onclick="openModal('price_list.jpeg', 'Glow by Alisha Official Rate Card')" class="px-4 py-2 rounded-lg border border-brand-gold/50 text-brand-gold hover:bg-brand-gold/10 text-xs font-cinzel flex items-center gap-1.5 transition">
                             <span>🔍</span> Fullscreen View
                         </button>
                         <a href="tel:8962401356" class="px-4 py-2 rounded-lg bg-brand-gold text-brand-black text-xs font-bold font-cinzel hover:bg-brand-gold-bright transition">
@@ -840,7 +840,7 @@
                             src="icon.jpeg" 
                             alt="Glow By Alisha Emblem" 
                             class="w-12 h-12 rounded-full border border-brand-gold object-cover"
-                            onerror="this.src='price%20list_2.jpeg'; this.onerror=function(){this.src='https://placehold.co/100x100/150620/ffd700?text=Glow'}"
+                            onerror="this.src='price_list.jpeg'; this.onerror=function(){this.src='https://placehold.co/100x100/150620/ffd700?text=Glow'}"
                         >
                         <div>
                             <span class="font-serif text-xl font-bold gold-metallic-text">Glow by Alisha</span>
@@ -971,12 +971,12 @@
         function handlePriceImageFallback(imgElement) {
             if (!imgElement.getAttribute('data-tried-space')) {
                 imgElement.setAttribute('data-tried-space', 'true');
-                imgElement.src = 'price list_2.jpeg';
+                imgElement.src = 'price_list.jpeg';
                 return;
             }
             if (!imgElement.getAttribute('data-tried-first-gen')) {
                 imgElement.setAttribute('data-tried-first-gen', 'true');
-                imgElement.src = 'price list.jpeg';
+                imgElement.src = 'price_list.jpeg';
                 return;
             }
             imgElement.src = 'https://placehold.co/800x800/180624/e4b655?text=Glow+By+Alisha+Price+List';
