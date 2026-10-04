@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow by Alisha | Luxury Beauty & Hair Salon</title>
+    <meta name="description" content="Glow by Alisha - Professional Hair & Beauty Services in Raigarh, Chhattisgarh. Home Service Available. Call 8962401356.">
+    
+    <!-- Google Fonts for royal luxury typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-black': '#07020a',
+                        'brand-dark': '#0f0517',
+                        'brand-purple': '#1b0927',
+                        'brand-purple-light': '#2a0e3c',
+                        'brand-gold': '#e4b655',
+                        'brand-gold-bright': '#ffd700',
+                        'brand-gold-muted': '#b38728',
+                        'brand-gold-light': '#fff3c4',
+                    },
+                    fontFamily: {
+                        cinzel: ['"Cinzel"', 'serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    },
+                    keyframes: {
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% 0' },
+                            '100%': { backgroundPosition: '200% 0' },
+                        },
+                        floatSlow: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
+                            '50%': { opacity: '0.8', transform: 'scale(1.05)' },
+                        }
+                    },
+                    animation: {
+                        shimmer: 'shimmer 4s ease-in-out infinite',
+                        float: 'floatSlow 6s ease-in-out infinite',
+                        glow: 'pulseGlow 4s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #07020a;
+            background-image: 
+                radial-gradient(ellipse 90% 60% at 50% 0%, #290838 0%, transparent 80%),
+                radial-gradient(circle at 10% 30%, rgba(212, 175, 55, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 70%, rgba(212, 175, 55, 0.06) 0%, transparent 40%),
+                radial-gradient(circle at 50% 100%, #1f0729 0%, #07020a 70%);
+            background-attachment: fixed;
+            color: #ffffff;
+        }
+
+        .gold-metallic-text {
+            background: linear-gradient(135deg, #fff3c4 0%, #ffd700 25%, #e4b655 50%, #996e1b 80%, #ffd700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 25px rgba(228, 182, 85, 0.35);
+        }
+
+        .gold-border-gradient {
+            position: relative;
+            background: linear-gradient(#150620, #0c0312) padding-box,
+                        linear-gradient(135deg, #e4b655, #684a14, #ffd700, #b38728) border-box;
+            border: 1.5px solid transparent;
+        }
+
+        .gold-border-glow:hover {
+            box-shadow: 0 0 25px rgba(228, 182, 85, 0.35);
+        }
+
+        .glass-nav {
+            background: rgba(12, 4, 18, 0.88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(228, 182, 85, 0.22);
+        }
+
+        /* Sparkle dots simulation */
+        .sparkle-overlay {
+            background-image: radial-gradient(circle, rgba(255, 215, 0, 0.25) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #07020a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(#b38728, #ffd700);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="antialiased font-sans flex flex-col min-h-screen relative overflow-x-hidden selection:bg-brand-gold selection:text-black">
+
+    <header class="fixed w-full top-0 z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand Brand Logo & Title -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="relative w-12 h-12 rounded-full overflow-hidden border-2 border-brand-gold shadow-[0_0_15px_rgba(228,182,85,0.45)] group-hover:scale-105 transition-transform duration-300">
+                        <img 
+                            src="icon.jpeg" 
+                            alt="Glow by Alisha Emblem" 
+                            class="w-full h-full object-cover object-top"
+                            onerror="this.src='icon.jpeg'; this.onerror=function(){this.src='https://placehold.co/100x100/150620/ffd700?text=Glow'}"
+                        >
+                    </div>
+                    <div>
+                        <span class="font-serif text-xl sm:text-2xl font-bold tracking-wider gold-metallic-text block leading-none">Glow by Alisha</span>
+                        <span class="text-[10px] tracking-widest text-brand-gold uppercase font-cinzel">Beauty & Hair Salon</span>
+                    </div>
+                </a>
+                
+                <!-- Desktop Navigation Menu -->
+                <nav class="hidden md:flex space-x-7 text-sm font-medium tracking-wide">
+                    <a href="#home" class="text-gray-300 hover:text-brand-gold transition-colors">Home</a>
+                    <a href="#services" class="text-gray-300 hover:text-brand-gold transition-colors">Services</a>
+                    <a href="#pricelist" class="text-gray-300 hover:text-brand-gold transition-colors flex items-center gap-1.5 font-semibold text-brand-gold-light">
+                        <span class="inline-block w-2 h-2 rounded-full bg-brand-gold animate-ping"></span>
+                        Price List
+                    </a>
+                    <a href="#specials" class="text-gray-300 hover:text-brand-gold transition-colors">Special Offers</a>
+                    <a href="#contact" class="text-gray-300 hover:text-brand-gold transition-colors">Contact</a>
+                </nav>
+                
+                <!-- Actions -->
+                <div class="flex items-center gap-3">
+                    <a href="tel:8962401356" class="hidden sm:inline-flex items-center gap-2 text-xs font-semibold px-4 py-2 border border-brand-gold/60 text-brand-gold rounded-full hover:bg-brand-gold/10 transition">
+                        <span>📞</span> 8962401356
+                    </a>
+                    <a href="#booking" class="px-5 py-2.5 bg-gradient-to-r from-brand-gold-muted via-brand-gold to-brand-gold-bright text-brand-black rounded-full font-bold text-xs uppercase tracking-wider shadow-[0_0_20px_rgba(228,182,85,0.4)] hover:shadow-[0_0_30px_rgba(255,215,0,0.6)] hover:scale-105 transition duration-300">
+                        Book Now
+                    </a>
+                    
+                    <!-- Mobile Hamburger -->
+                    <button id="mobileMenuBtn" aria-label="Toggle Menu" class="md:hidden text-brand-gold hover:text-white p-2 focus:outline-none">
+                        <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobileMenu" class="hidden md:hidden bg-brand-dark/95 border-b border-brand-gold/30 px-6 py-5 space-y-4 text-center">
+            <a href="#home" class="mobile-item block text-gray-200 hover:text-brand-gold text-base py-1">Home</a>
+            <a href="#services" class="mobile-item block text-gray-200 hover:text-brand-gold text-base py-1">Services</a>
+            <a href="#pricelist" class="mobile-item block text-brand-gold font-bold text-base py-1">✨ Full Price List</a>
+            <a href="#specials" class="mobile-item block text-gray-200 hover:text-brand-gold text-base py-1">Special Offers & Packages</a>
+            <a href="#booking" class="mobile-item block text-gray-200 hover:text-brand-gold text-base py-1">Book Appointment</a>
+            <a href="#contact" class="mobile-item block text-gray-200 hover:text-brand-gold text-base py-1">Location & Contact</a>
+            <a href="tel:8962401356" class="block w-full text-center py-2.5 bg-brand-gold text-brand-black rounded-full font-bold text-sm">
+                Call 8962401356
+            </a>
+        </div>
+    </header>
+
+    <section id="home" class="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden">
+        <!-- Floating Ambient Glows -->
+        <div class="absolute top-16 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-brand-gold/15 rounded-full blur-[140px] pointer-events-none"></div>
+        <div class="absolute top-40 right-10 w-72 h-72 bg-purple-600/15 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
+            <!-- Top Tagline Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-gold/50 bg-brand-purple/70 backdrop-blur-md mb-6">
+                <span class="text-xs sm:text-sm font-cinzel tracking-widest text-brand-gold">✨ WELCOME TO GLOW BY ALISHA ✨</span>
+            </div>
+
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-5 leading-tight">
+                Look Good, <br>
+                <span class="gold-metallic-text font-serif italic">Feel Confident ♡</span>
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-gray-300 text-sm sm:text-lg font-light leading-relaxed mb-8">
+                Professional Hair & Beauty Services designed for sheer elegance and hygienic perfection. 
+                <span class="text-brand-gold font-medium block mt-1">Your Beauty, Our Priority & Passion! 💖</span>
+            </p>
+
+            <!-- Quick Key Highlights Bar -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto mb-10">
+                <div class="gold-border-gradient rounded-xl p-3.5 text-center flex flex-col items-center justify-center">
+                    <span class="text-xl mb-1">🏠</span>
+                    <span class="text-xs uppercase font-cinzel text-brand-gold font-semibold">Home Service</span>
+                    <span class="text-[11px] text-gray-400">Available across Raigarh</span>
+                </div>
+                <div class="gold-border-gradient rounded-xl p-3.5 text-center flex flex-col items-center justify-center">
+                    <span class="text-xl mb-1">✨</span>
+                    <span class="text-xs uppercase font-cinzel text-brand-gold font-semibold">Premium Products</span>
+                    <span class="text-[11px] text-gray-400">RICA, L'Oréal, O3+</span>
+                </div>
+                <div class="gold-border-gradient rounded-xl p-3.5 text-center flex flex-col items-center justify-center">
+                    <span class="text-xl mb-1">🧼</span>
+                    <span class="text-xs uppercase font-cinzel text-brand-gold font-semibold">Hygienic & Safe</span>
+                    <span class="text-[11px] text-gray-400">Sanitized beauty kits</span>
+                </div>
+                <div class="gold-border-gradient rounded-xl p-3.5 text-center flex flex-col items-center justify-center">
+                    <span class="text-xl mb-1">📍</span>
+                    <span class="text-xs uppercase font-cinzel text-brand-gold font-semibold">Raigarh (CG)</span>
+                    <span class="text-[11px] text-gray-400">PIN – 496001</span>
+                </div>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-4">
+                <a href="#pricelist" class="px-8 py-3.5 rounded-full bg-gradient-to-r from-brand-gold via-brand-gold-bright to-brand-gold text-brand-black font-bold text-sm uppercase tracking-wider shadow-[0_0_25px_rgba(228,182,85,0.4)] hover:scale-105 transition duration-300 flex items-center gap-2">
+                    <span>📜</span> View Full Price List
+                </a>
+                <a href="#booking" class="px-8 py-3.5 rounded-full border border-brand-gold text-brand-gold hover:bg-brand-gold/10 font-bold text-sm uppercase tracking-wider transition duration-300 flex items-center gap-2">
+                    <span>📅</span> Book Appointment
+                </a>
+                <a href="https://wa.me/918962401356?text=Hi%20Alisha,%20I%20would%20like%20to%20book%20an%20appointment!" target="_blank" class="px-6 py-3.5 rounded-full bg-emerald-600/90 hover:bg-emerald-500 text-white font-bold text-sm tracking-wider transition duration-300 flex items-center gap-2 shadow-lg">
+                    <span>💬</span> WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-16 bg-brand-dark/70 relative border-t border-brand-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-xs uppercase tracking-widest font-cinzel text-brand-gold">Signature Offerings</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold mt-2 text-white">
+                    Salon <span class="gold-metallic-text font-serif">Treatments</span>
+                </h2>
+                <div class="h-0.5 w-20 bg-gradient-to-r from-transparent via-brand-gold to-transparent mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 sm:gap-4">
+                <!-- Service Badges -->
+                <div class="gold-border-gradient rounded-xl p-4 text-center hover:-translate-y-1 transition duration-300">
+                    <div class="text-3xl mb-2">💇‍♀️</div>
+                    <h3 class="font-cinzel text-xs font-bold text-brand-gold">Haircut</h3>
+                    <p class="text-[10px] text-gray-400 mt-1">Trendy & Classic</p>
+                </div>
+                <div class="gold-border-gradient rounded-xl p-4 text-center hover:-translate-y-1 transition duration-300">
+                    <div class="text-3xl mb-2">💆‍♀️</div>
+                    <h3 class="font-cinzel text-xs font-bold text-brand-gold">Hair Spa</h3>
+                    <p class="text-[10px] text-gray-400 mt-1">L'Oréal Nourish</p>
+                </div>
+                <div class="gold-border-gradient rounded-xl p-4 text-center hover:-translate-y-1 transition duration-300">
+                    <div class="text-3xl mb-2">✨</div>
+                    <h3 class="font-cinzel text-xs font-bold text-brand-gold">Smoothening</h3>
+                    <p class="text-[10px] text-gray-400 mt-1">Silky Shine</p>
+                </div>
+                <div class="gold-border-gradient rounded-xl p-4 text-center hover:-translate-y-1 transition duration-300">
+                    <div class="text-3xl mb-2">🧴</div>
+                    <h3 class="font-cinzel text-xs font-bold text-brand-gold">Keratin</h3>
+                    <p class="text-[10px] text-gray-400 mt-1">Protein Repair</p>
+                </div>
+                <div class="gold-border-gradient rounded-xl p-4 text-center hover:-translate-y-1 transition duration-300">
+                    <div class="text-3xl mb-2">🎨</div>
+                    <h3 class="font-cinzel text-xs font-bold text-brand-gold">Hair Color</h3>
+                    <p class="text-[10px] text-gray-400 mt-1">Global & Streaks</p>
+                </div>
+                <div class="gold-border-gradient rounded-xl p-4 text-center hover:-translate-y-1 transition duration-300">
+                    <div class="text-3xl mb-2">👰</div>
+                    <h3 class="font-cinzel text-xs font-bold text-brand-gold">Bridal Styling</h3>
+                    <p class="text-[10px] text-gray-400 mt-1">Royal Looks</p>
+                </div>
+                <div class="gold-border-gradient rounded-xl p-4 text-center hover:-translate-y-1 transition duration-300">
+                    <div class="text-3xl mb-2">🧖‍♀️</div>
+                    <h3 class="font-cinzel text-xs font-bold text-brand-gold">Facial Care</h3>
+                    <p class="text-[10px] text-gray-400 mt-1">Gold & Diamond</p>
+                </div>
+                <div class="gold-border-gradient rounded-xl p-4 text-center hover:-translate-y-1 transition duration-300">
+                    <div class="text-3xl mb-2">🌿</div>
+                    <h3 class="font-cinzel text-xs font-bold text-brand-gold">Mehndi</h3>
+                    <p class="text-[10px] text-gray-400 mt-1">Arabic & Party</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricelist" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-gold/40 text-brand-gold text-xs uppercase tracking-widest font-cinzel mb-3">
+                    Verified Rates & Genuine Pricing
+                </div>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white">
+                    Official <span class="gold-metallic-text font-serif">Price List</span>
+                </h2>
+                <p class="text-gray-300 text-sm sm:text-base mt-3">
+                    Click the price list card below to inspect in high-resolution, or browse the interactive menu breakdown.
+                </p>
+            </div>
+
+            <!-- Main Rate Card Presentation Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Left: Rate Card Image with Click to Zoom Modal -->
+                <div class="lg:col-span-6 flex flex-col items-center">
+                    <div class="relative group cursor-pointer w-full max-w-lg rounded-2xl overflow-hidden border-2 border-brand-gold/60 shadow-[0_0_40px_rgba(212,175,55,0.25)] bg-brand-purple"
+                         onclick="openModal('price_list.jpeg', 'Glow by Alisha Official Rate Card')">
+                        
+                        <!-- Primary Image with multiple robust fallbacks for local runtime -->
+                        <img 
+                            id="mainPriceListImg"
+                            src="price_list.jpeg" 
+                            alt="Glow by Alisha Official Price List"
+                            class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500 block"
+                            onerror="handlePriceImageFallback(this)"
+                        >
+
+                        <!-- Hover Overlay -->
+                        <div class="absolute inset-0 bg-brand-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4">
+                            <span class="px-5 py-2.5 rounded-full bg-brand-gold text-brand-black font-cinzel text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-xl">
+                                🔍 Click to View Full Size
+                            </span>
+                            <span class="text-xs text-gray-200 mt-2 font-medium">Pinch & zoom enabled</span>
+                        </div>
+
+                        <!-- Top Ribbon -->
+                        <div class="absolute top-3 left-3 bg-brand-purple/90 border border-brand-gold px-3 py-1 rounded-full text-[11px] font-cinzel text-brand-gold-bright flex items-center gap-1 shadow">
+                            <span>⭐</span> Official Rate Card
+                        </div>
+                    </div>
+
+                    <!-- Quick buttons below image -->
+                    <div class="flex items-center gap-3 mt-4">
+                        <button onclick="openModal('price_list.jpeg', 'Glow by Alisha Official Rate Card')" class="px-4 py-2 rounded-lg border border-brand-gold/50 text-brand-gold hover:bg-brand-gold/10 text-xs font-cinzel flex items-center gap-1.5 transition">
+                            <span>🔍</span> Fullscreen View
+                        </button>
+                        <a href="tel:8962401356" class="px-4 py-2 rounded-lg bg-brand-gold text-brand-black text-xs font-bold font-cinzel hover:bg-brand-gold-bright transition">
+                            📞 Inquire: 8962401356
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Quick Digital Price Book -->
+                <div class="lg:col-span-6 space-y-5">
+                    
+                    <!-- Category 1: Threading & Face Care -->
+                    <div class="gold-border-gradient rounded-xl p-5 shadow-lg">
+                        <div class="flex items-center justify-between border-b border-brand-gold/30 pb-3 mb-3">
+                            <div class="flex items-center gap-3">
+                                <span class="text-2xl">🪡</span>
+                                <div>
+                                    <h3 class="font-cinzel text-base font-bold text-white">Threading & Face Care</h3>
+                                    <p class="text-[11px] text-gray-400">Gentle shaping & complexion refresh</p>
+                                </div>
+                            </div>
+                            <span class="text-xs text-brand-gold font-cinzel font-semibold">Affordable</span>
+                        </div>
+                        <div class="space-y-2.5 text-sm">
+                            <div class="flex justify-between items-center py-1 border-b border-white/5">
+                                <span class="text-gray-200">Threading</span>
+                                <span class="font-bold text-brand-gold font-cinzel">₹30/-</span>
+                            </div>
+                            <div class="flex justify-between items-center py-1 border-b border-white/5">
+                                <span class="text-gray-200">Upper Lips</span>
+                                <span class="font-bold text-brand-gold font-cinzel">₹15/-</span>
+                            </div>
+                            <div class="flex justify-between items-center py-1 border-b border-white/5">
+                                <span class="text-gray-200">Bleach</span>
+                                <span class="font-bold text-brand-gold font-cinzel">₹100/-</span>
+                            </div>
+                            <div class="flex justify-between items-center py-1">
+                                <span class="text-gray-200">D-Tan Treatment</span>
+                                <span class="font-bold text-brand-gold font-cinzel">₹100/-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category 2: Facials & Cleansing -->
+                    <div class="gold-border-gradient rounded-xl p-5 shadow-lg">
+                        <div class="flex items-center justify-between border-b border-brand-gold/30 pb-3 mb-3">
+                            <div class="flex items-center gap-3">
+                                <span class="text-2xl">🧖‍♀️</span>
+                                <div>
+                                    <h3 class="font-cinzel text-base font-bold text-white">Facials & Cleansing</h3>
+                                    <p class="text-[11px] text-gray-400">Pure botanicals & gold glow</p>
+                                </div>
+                            </div>
+                            <span class="text-xs text-brand-gold font-cinzel font-semibold">Popular</span>
+                        </div>
+                        <div class="space-y-2.5 text-sm">
+                            <div class="flex justify-between items-center py-1 border-b border-white/5">
+                                <span class="text-gray-200">Express Cleanup</span>
+                                <span class="font-bold text-brand-gold font-cinzel">₹400/-</span>
+                            </div>
+                            <div class="flex justify-between items-center py-1 border-b border-white/5">
+                                <span class="text-gray-200">Facial (Fruit Glow)</span>
+                                <span class="font-bold text-brand-gold font-cinzel">₹500/-</span>
+                            </div>
+                            <div class="flex justify-between items-center py-1 border-b border-white/5">
+                                <span class="text-gray-200">Facial (Pure Gold)</span>
+                                <span class="font-bold text-brand-gold font-cinzel">₹600/-</span>
+                            </div>
+                            <div class="flex justify-between items-center py-1">
+                                <span class="text-gray-200">Facial (Diamond Radiance)</span>
+                                <span class="font-bold text-brand-gold font-cinzel">₹800/-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category 3: Waxing & Nails / Mehandi -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="gold-border-gradient rounded-xl p-4 shadow-lg">
+                            <h4 class="font-cinzel text-sm font-bold text-brand-gold border-b border-brand-gold/30 pb-2 mb-2 flex items-center gap-2">
+                                <span>🦵</span> Regular Waxing
+                            </h4>
+                            <div class="space-y-2 text-xs">
+                                <div class="flex justify-between py-1 border-b border-white/5">
+                                    <span>Under Arm Wax</span>
+                                    <span class="font-bold text-brand-gold">₹50/-</span>
+                                </div>
+                                <div class="flex justify-between py-1 border-b border-white/5">
+                                    <span>Hand Wax</span>
+                                    <span class="font-bold text-brand-gold">₹200/-</span>
+                                </div>
+                                <div class="flex justify-between py-1 border-b border-white/5">
+                                    <span>Half Leg Wax</span>
+                                    <span class="font-bold text-brand-gold">₹250/-</span>
+                                </div>
+                                <div class="flex justify-between py-1">
+                                    <span>Full Leg Wax</span>
+                                    <span class="font-bold text-brand-gold">₹400/-</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gold-border-gradient rounded-xl p-4 shadow-lg">
+                            <h4 class="font-cinzel text-sm font-bold text-brand-gold border-b border-brand-gold/30 pb-2 mb-2 flex items-center gap-2">
+                                <span>💅</span> Nails & Mehandi
+                            </h4>
+                            <div class="space-y-2 text-xs">
+                                <div class="flex justify-between py-1 border-b border-white/5">
+                                    <span>Manicure</span>
+                                    <span class="font-bold text-brand-gold">₹300/-</span>
+                                </div>
+                                <div class="flex justify-between py-1 border-b border-white/5">
+                                    <span>Pedicure</span>
+                                    <span class="font-bold text-brand-gold">₹450/-</span>
+                                </div>
+                                <div class="flex justify-between py-1 border-b border-white/5">
+                                    <span>Arabic Mehandi</span>
+                                    <span class="font-bold text-brand-gold">₹400/-</span>
+                                </div>
+                                <div class="flex justify-between py-1">
+                                    <span>Party Mehandi</span>
+                                    <span class="font-bold text-brand-gold">₹800/-</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Instant Book Callout -->
+                    <div class="bg-gradient-to-r from-brand-purple to-brand-dark p-4 rounded-xl border border-brand-gold/40 flex flex-col sm:flex-row items-center justify-between gap-3">
+                        <div class="text-center sm:text-left">
+                            <p class="text-xs font-cinzel text-brand-gold font-bold">WANT HOME SERVICE IN RAIGARH?</p>
+                            <p class="text-xs text-gray-300">Book your salon time slot at your doorstep.</p>
+                        </div>
+                        <a href="#booking" class="whitespace-nowrap px-4 py-2 bg-brand-gold hover:bg-brand-gold-bright text-brand-black font-bold text-xs rounded-full transition">
+                            Book Service
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="specials" class="py-20 bg-brand-dark/80 relative border-t border-brand-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-xs uppercase tracking-widest font-cinzel text-brand-gold">Luxury Treatments</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-1">
+                    Speciality <span class="gold-metallic-text font-serif">Offers & Spotlight</span>
+                </h2>
+                <p class="text-gray-300 text-sm mt-3">All exclusive salon packages curated with world-class products</p>
+                <div class="h-0.5 w-20 bg-gradient-to-r from-transparent via-brand-gold to-transparent mx-auto mt-4"></div>
+            </div>
+
+            <!-- Spotlight Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- 1. Premium Facials Card -->
+                <div class="gold-border-gradient rounded-2xl overflow-hidden shadow-xl flex flex-col hover:-translate-y-1 transition duration-300 group">
+                    <div class="relative overflow-hidden cursor-pointer" onclick="openModal('WhatsApp Image 2026-10-04 at 4.40.34 PM (1).jpeg', 'Premium Facial Menu')">
+                        <img 
+                            src="WhatsApp%20Image%202026-10-04%20at%204.40.34%20PM%20(1).jpeg" 
+                            alt="Premium Facial Menu" 
+                            class="w-full h-80 object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                            onerror="this.src='https://placehold.co/600x800/180624/e4b655?text=Premium+Facials'"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent"></div>
+                        <span class="absolute bottom-3 right-3 text-xs bg-brand-black/80 border border-brand-gold/60 text-brand-gold px-2.5 py-1 rounded-full">🔍 Tap to Zoom</span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="font-serif text-lg font-bold text-white">Premium Facials</h3>
+                                <span class="text-brand-gold text-xs font-cinzel font-semibold">From ₹500/-</span>
+                            </div>
+                            <p class="text-xs text-gray-300 mb-3">Mix Fruit, Gold, Diamond Glow, Lotus Herbals Radiant Diamond & O3 Bridal Facial.</p>
+                        </div>
+                        <a href="#booking" class="w-full text-center py-2 rounded-lg border border-brand-gold/60 text-brand-gold text-xs uppercase font-cinzel font-bold hover:bg-brand-gold hover:text-black transition">
+                            Book Facial
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 2. RICA Painless Wax Card -->
+                <div class="gold-border-gradient rounded-2xl overflow-hidden shadow-xl flex flex-col hover:-translate-y-1 transition duration-300 group">
+                    <div class="relative overflow-hidden cursor-pointer" onclick="openModal('WhatsApp Image 2026-10-04 at 4.40.34 PM (2).jpeg', 'RICA Wax - Premium & Painless')">
+                        <img 
+                            src="WhatsApp%20Image%202026-10-04%20at%204.40.34%20PM%20(2).jpeg" 
+                            alt="RICA Wax Menu" 
+                            class="w-full h-80 object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                            onerror="this.src='https://placehold.co/600x800/180624/e4b655?text=RICA+Wax'"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent"></div>
+                        <span class="absolute bottom-3 right-3 text-xs bg-brand-black/80 border border-brand-gold/60 text-brand-gold px-2.5 py-1 rounded-full">🔍 Tap to Zoom</span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="font-serif text-lg font-bold text-white">RICA Painless Wax</h3>
+                                <span class="text-brand-gold text-xs font-cinzel font-semibold">Full Body ₹2000/-</span>
+                            </div>
+                            <p class="text-xs text-gray-300 mb-3">Italian liposoluble wax formulated for gentle depilation, glowing and silky smooth skin.</p>
+                        </div>
+                        <a href="#booking" class="w-full text-center py-2 rounded-lg border border-brand-gold/60 text-brand-gold text-xs uppercase font-cinzel font-bold hover:bg-brand-gold hover:text-black transition">
+                            Book RICA Wax
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 3. Body Polishing Card -->
+                <div class="gold-border-gradient rounded-2xl overflow-hidden shadow-xl flex flex-col hover:-translate-y-1 transition duration-300 group">
+                    <div class="relative overflow-hidden cursor-pointer" onclick="openModal('WhatsApp Image 2026-10-04 at 4.40.34 PM.jpeg', 'Full Body Polishing Treatment')">
+                        <img 
+                            src="WhatsApp%20Image%202026-10-04%20at%204.40.34%20PM.jpeg" 
+                            alt="Body Polishing Special" 
+                            class="w-full h-80 object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                            onerror="this.src='https://placehold.co/600x800/180624/e4b655?text=Body+Polishing'"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent"></div>
+                        <span class="absolute bottom-3 right-3 text-xs bg-brand-black/80 border border-brand-gold/60 text-brand-gold px-2.5 py-1 rounded-full">🔍 Tap to Zoom</span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="font-serif text-lg font-bold text-white">Full Body Polishing</h3>
+                                <span class="text-brand-gold text-xs font-cinzel font-bold">Only ₹2999/-</span>
+                            </div>
+                            <p class="text-xs text-gray-300 mb-3">4-Step Luxury Ritual: Exfoliation, Polishing, Deep Moisturizing & Radiant Long-Lasting Glow.</p>
+                        </div>
+                        <a href="#booking" class="w-full text-center py-2 rounded-lg border border-brand-gold/60 text-brand-gold text-xs uppercase font-cinzel font-bold hover:bg-brand-gold hover:text-black transition">
+                            Book Body Polishing
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 4. L'Oreal Hair Spa Card -->
+                <div class="gold-border-gradient rounded-2xl overflow-hidden shadow-xl flex flex-col hover:-translate-y-1 transition duration-300 group md:col-span-1 lg:col-span-2">
+                    <div class="grid grid-cols-1 sm:grid-cols-2">
+                        <div class="relative overflow-hidden cursor-pointer h-72 sm:h-full" onclick="openModal('WhatsApp Image 2026-10-04 at 4.40.35 PM (1).jpeg', 'L\'Oréal Hair Spa')">
+                            <img 
+                                src="WhatsApp%20Image%202026-10-04%20at%204.40.35%20PM%20(1).jpeg" 
+                                alt="L'Oreal Hair Spa" 
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                                onerror="this.src='https://placehold.co/700x500/180624/e4b655?text=Loreal+Hair+Spa'"
+                            >
+                            <span class="absolute bottom-3 right-3 text-xs bg-brand-black/80 border border-brand-gold/60 text-brand-gold px-2.5 py-1 rounded-full">🔍 Tap to Zoom</span>
+                        </div>
+                        <div class="p-6 flex flex-col justify-between bg-brand-dark/90">
+                            <div>
+                                <span class="text-[10px] font-cinzel tracking-widest text-brand-gold uppercase">Deep Conditioning Care</span>
+                                <h3 class="font-serif text-2xl font-bold text-white mt-1">L'Oréal Hair Spa</h3>
+                                <p class="text-brand-gold font-cinzel font-semibold mt-1">Starting at Only ₹600/-</p>
+                                <ul class="text-xs text-gray-300 mt-4 space-y-1.5">
+                                    <li class="flex items-center gap-2"><span>✨</span> Hair fall control & root strengthening</li>
+                                    <li class="flex items-center gap-2"><span>✨</span> Deep repair for damaged, frizzy strands</li>
+                                    <li class="flex items-center gap-2"><span>✨</span> Removes stubborn dandruff & relieves scalp stress</li>
+                                    <li class="flex items-center gap-2"><span>✨</span> Boosts radiant healthy hair growth</li>
+                                </ul>
+                            </div>
+                            <div class="mt-6 flex items-center gap-3">
+                                <a href="#booking" class="flex-1 text-center py-2.5 bg-brand-gold text-brand-black font-cinzel font-bold text-xs uppercase rounded-lg hover:bg-brand-gold-bright transition">
+                                    Book Hair Spa
+                                </a>
+                                <a href="tel:8962401356" class="px-4 py-2.5 border border-brand-gold/50 text-brand-gold rounded-lg text-xs font-bold">
+                                    📞 Call
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Root Touch-Up Card -->
+                <div class="gold-border-gradient rounded-2xl overflow-hidden shadow-xl flex flex-col hover:-translate-y-1 transition duration-300 group">
+                    <div class="relative overflow-hidden cursor-pointer" onclick="openModal('WhatsApp Image 2026-10-04 at 4.40.35 PM.jpeg', 'Instant Root Touch-Up')">
+                        <img 
+                            src="WhatsApp%20Image%202026-10-04%20at%204.40.35%20PM.jpeg" 
+                            alt="Root Touch-Up Special" 
+                            class="w-full h-80 object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                            onerror="this.src='https://placehold.co/600x800/180624/e4b655?text=Root+Touch-Up'"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent"></div>
+                        <span class="absolute bottom-3 right-3 text-xs bg-brand-black/80 border border-brand-gold/60 text-brand-gold px-2.5 py-1 rounded-full">🔍 Tap to Zoom</span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="font-serif text-lg font-bold text-white">Root Touch-Up</h3>
+                                <span class="text-brand-gold text-xs font-cinzel font-bold">Only ₹599/-</span>
+                            </div>
+                            <p class="text-xs text-gray-300 mb-3">100% Grey coverage with dry guard technology for shiny, vibrant & youthful hair.</p>
+                        </div>
+                        <a href="#booking" class="w-full text-center py-2 rounded-lg border border-brand-gold/60 text-brand-gold text-xs uppercase font-cinzel font-bold hover:bg-brand-gold hover:text-black transition">
+                            Book Touch-Up
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" class="py-20 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="gold-border-gradient rounded-3xl p-6 sm:p-10 md:p-12 shadow-[0_0_50px_rgba(212,175,55,0.2)] bg-brand-dark/95 backdrop-blur-md">
+                
+                <div class="text-center mb-8">
+                    <span class="text-xs uppercase tracking-widest font-cinzel text-brand-gold">Hassle-Free Scheduling</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-1">
+                        Book Your <span class="gold-metallic-text font-serif">Appointment</span>
+                    </h2>
+                    <p class="text-gray-300 text-xs sm:text-sm mt-2">
+                        Schedule an in-salon or comfortable home visit. We will confirm your slot quickly!
+                    </p>
+                    <div class="inline-flex items-center gap-2 mt-3 px-4 py-1.5 rounded-full bg-brand-purple border border-brand-gold/40 text-xs text-gray-200">
+                        <span>📞 Direct Helpline:</span>
+                        <a href="tel:8962401356" class="text-brand-gold font-bold hover:underline">8962401356</a>
+                    </div>
+                </div>
+
+                <form id="appointmentForm" class="space-y-5" onsubmit="handleBookingSubmit(event)">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-cinzel text-brand-gold mb-1">Your Full Name *</label>
+                            <input type="text" id="clientName" required placeholder="e.g. Priya Sharma" class="w-full bg-brand-purple/70 border border-brand-gold/30 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-cinzel text-brand-gold mb-1">Contact Number *</label>
+                            <input type="tel" id="clientPhone" required placeholder="e.g. 8962401356" class="w-full bg-brand-purple/70 border border-brand-gold/30 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-cinzel text-brand-gold mb-1">Service Type *</label>
+                            <select id="clientService" required class="w-full bg-brand-purple border border-brand-gold/30 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition">
+                                <option value="" disabled selected>Choose a beauty service...</option>
+                                <option value="Haircut & Styling">Haircut & Styling</option>
+                                <option value="L'Oréal Hair Spa (₹600+)">L'Oréal Hair Spa (₹600+)</option>
+                                <option value="Hair Smoothening / Keratin">Hair Smoothening / Keratin</option>
+                                <option value="Root Touch-Up (₹599)">Root Touch-Up (₹599)</option>
+                                <option value="Fruit / Gold Facial">Fruit / Gold Facial</option>
+                                <option value="Diamond / O3+ Bridal Facial">Diamond / O3+ Bridal Facial</option>
+                                <option value="Body Polishing (₹2999)">Body Polishing (₹2999)</option>
+                                <option value="RICA Waxing Package">RICA Waxing Package</option>
+                                <option value="Regular Waxing / Clean-up">Regular Waxing / Clean-up</option>
+                                <option value="Mehndi / Nails / Pedicure">Mehndi / Nails / Pedicure</option>
+                                <option value="Bridal Complete Styling">Bridal Complete Styling</option>
+                                <option value="Other Customized Combo">Other Customized Combo</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-cinzel text-brand-gold mb-1">Service Location *</label>
+                            <select id="serviceLocation" required class="w-full bg-brand-purple border border-brand-gold/30 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition">
+                                <option value="Salon Visit (Raigarh)">Salon Visit (Raigarh)</option>
+                                <option value="Home Service (Doorstep)">Home Service (Doorstep at Your Location)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-cinzel text-brand-gold mb-1">Preferred Date *</label>
+                            <input type="date" id="clientDate" required class="w-full bg-brand-purple/70 border border-brand-gold/30 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition [color-scheme:dark]">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-cinzel text-brand-gold mb-1">Preferred Time Slot *</label>
+                            <select id="clientTime" required class="w-full bg-brand-purple border border-brand-gold/30 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition">
+                                <option value="10:00 AM - 12:00 PM">Morning (10:00 AM - 12:00 PM)</option>
+                                <option value="12:00 PM - 03:00 PM">Afternoon (12:00 PM - 03:00 PM)</option>
+                                <option value="03:00 PM - 06:00 PM">Evening (03:00 PM - 06:00 PM)</option>
+                                <option value="06:00 PM - 08:30 PM">Night (06:00 PM - 08:30 PM)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-cinzel text-brand-gold mb-1">Special Notes or Address (for home service)</label>
+                        <textarea id="clientNotes" rows="2" placeholder="e.g. Please bring RICA wax kit and hair spa products" class="w-full bg-brand-purple/70 border border-brand-gold/30 rounded-xl px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition"></textarea>
+                    </div>
+
+                    <div class="pt-2 flex flex-col sm:flex-row gap-3">
+                        <button type="submit" class="flex-1 py-3.5 px-6 rounded-xl bg-gradient-to-r from-brand-gold-muted via-brand-gold to-brand-gold-bright text-brand-black font-cinzel font-bold text-xs uppercase tracking-wider shadow-[0_0_25px_rgba(228,182,85,0.4)] hover:opacity-95 transition">
+                            Confirm Appointment
+                        </button>
+                        <button type="button" onclick="bookViaWhatsApp()" class="py-3.5 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-cinzel font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition shadow-lg">
+                            <span>💬</span> Book via WhatsApp
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Feedback status box -->
+                <div id="bookingAlert" class="hidden mt-6 p-4 rounded-xl border border-brand-gold bg-brand-purple/90 text-center">
+                    <p class="text-brand-gold-bright font-cinzel font-bold text-sm">✨ Appointment Request Received!</p>
+                    <p class="text-xs text-gray-200 mt-1">Thank you! Alisha will reach out to you at <span id="confirmedPhone"></span> to confirm your session.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 bg-brand-dark/90 border-t border-brand-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left items-center">
+                
+                <!-- Salon Identity -->
+                <div>
+                    <div class="flex items-center justify-center md:justify-start gap-3 mb-3">
+                        <img 
+                            src="price_list.jpeg" 
+                            alt="Glow By Alisha Emblem" 
+                            class="w-12 h-12 rounded-full border border-brand-gold object-cover"
+                            onerror="this.src='icon.jpeg'; this.onerror=function(){this.src='https://placehold.co/100x100/150620/ffd700?text=Glow'}"
+                        >
+                        <div>
+                            <span class="font-serif text-xl font-bold gold-metallic-text">Glow by Alisha</span>
+                            <span class="block text-[10px] uppercase font-cinzel text-brand-gold">Beauty & Hair Salon</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-400 italic font-serif">"Your Beauty, Our Priority ♡ Look Good, Feel Confident!"</p>
+                </div>
+
+                <!-- Contact & Address -->
+                <div class="space-y-2 text-xs text-gray-300">
+                    <p class="flex items-center justify-center md:justify-start gap-2">
+                        <span class="text-brand-gold text-base">📍</span> 
+                        <span>Raigarh, Chhattisgarh – <strong>496001</strong></span>
+                    </p>
+                    <p class="flex items-center justify-center md:justify-start gap-2">
+                        <span class="text-brand-gold text-base">📞</span> 
+                        <a href="tel:8962401356" class="hover:text-brand-gold transition font-bold text-sm text-brand-gold-bright">+91 8962401356</a>
+                    </p>
+                    <p class="flex items-center justify-center md:justify-start gap-2">
+                        <span class="text-brand-gold text-base">🏠</span> 
+                        <span>Professional Home Service Available on Request</span>
+                    </p>
+                    <p class="flex items-center justify-center md:justify-start gap-2">
+                        <span class="text-brand-gold text-base">⏰</span> 
+                        <span>Mon - Sun: 10:00 AM – 8:30 PM</span>
+                    </p>
+                </div>
+
+                <!-- Call to action button box -->
+                <div class="flex flex-col items-center md:items-end gap-3">
+                    <a href="tel:8962401356" class="w-full sm:w-auto px-6 py-3 rounded-full bg-brand-gold text-brand-black font-cinzel font-bold text-xs uppercase tracking-wider shadow hover:bg-brand-gold-bright transition text-center">
+                        Call Salon Now
+                    </a>
+                    <a href="https://wa.me/918962401356?text=Hello%20Glow%20By%20Alisha%20Salon,%20I%20have%20an%20inquiry%20regarding%20beauty%20services." target="_blank" class="w-full sm:w-auto px-6 py-3 rounded-full border border-brand-gold/60 text-brand-gold hover:bg-brand-gold/10 font-cinzel font-semibold text-xs tracking-wider transition text-center flex items-center justify-center gap-2">
+                        <span>💬</span> Chat on WhatsApp
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center text-[11px] text-gray-500">
+                <p>© <span id="currentYear"></span> Glow by Alisha Beauty & Hair Salon. All Rights Reserved.</p>
+                <p class="mt-2 sm:mt-0 text-brand-gold">Hygienic • Premium • Passionate</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="imageModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-3 sm:p-6" onclick="closeModal()">
+        <div class="relative max-w-4xl w-full max-h-[95vh] flex flex-col items-center" onclick="event.stopPropagation()">
+            <!-- Close Button -->
+            <button onclick="closeModal()" class="absolute -top-12 right-0 sm:right-2 text-white hover:text-brand-gold bg-brand-dark/80 border border-brand-gold/40 rounded-full w-10 h-10 flex items-center justify-center text-xl transition">
+                ✕
+            </button>
+            
+            <!-- Image Caption -->
+            <div id="modalCaption" class="text-center font-cinzel text-xs sm:text-sm text-brand-gold mb-3 font-semibold">
+                Glow by Alisha
+            </div>
+
+            <!-- Modal Content Frame -->
+            <div class="overflow-auto max-h-[80vh] w-full rounded-2xl border-2 border-brand-gold/60 shadow-[0_0_50px_rgba(212,175,55,0.4)] bg-brand-dark">
+                <img id="modalImage" src="" alt="Full view preview" class="w-full h-auto object-contain mx-auto block">
+            </div>
+
+            <div class="mt-3 flex items-center gap-4 text-xs text-gray-300">
+                <span>Touch or pinch to inspect rates</span>
+                <button onclick="closeModal()" class="px-4 py-1.5 rounded-full bg-brand-purple border border-brand-gold/50 text-brand-gold hover:bg-brand-gold hover:text-brand-black transition">
+                    Done Viewing
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dynamic Copyright Year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Mobile Nav Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileItems = document.querySelectorAll('.mobile-item');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileItems.forEach(item => {
+            item.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Price List Image Fallback handling logic
+        function handlePriceImageFallback(imgElement) {
+            // First attempt unencoded or secondary uploaded variant
+            if (!imgElement.getAttribute('data-tried-space')) {
+                imgElement.setAttribute('data-tried-space', 'true');
+                imgElement.src = 'price_list.jpeg';
+                return;
+            }
+            if (!imgElement.getAttribute('data-tried-first-gen')) {
+                imgElement.setAttribute('data-tried-first-gen', 'true');
+                imgElement.src = 'price_list.jpeg';
+                return;
+            }
+            // Clean graphic placeholder fallback if file is still loading in sandbox
+            imgElement.src = 'https://placehold.co/800x800/180624/e4b655?text=Glow+By+Alisha+Price+List';
+        }
+
+        // Lightbox Modal Controls
+        const imageModal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const modalCaption = document.getElementById('modalCaption');
+
+        function openModal(src, caption) {
+            modalImg.src = src;
+            modalCaption.textContent = caption || 'Glow by Alisha';
+            imageModal.classList.remove('hidden');
+            imageModal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            imageModal.classList.add('hidden');
+            imageModal.classList.remove('flex');
+            modalImg.src = '';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close on Escape Key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Booking Form Handling
+        function handleBookingSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('clientName').value;
+            const phone = document.getElementById('clientPhone').value;
+            const alertBox = document.getElementById('bookingAlert');
+            const phoneHolder = document.getElementById('confirmedPhone');
+
+            phoneHolder.textContent = phone;
+            alertBox.classList.remove('hidden');
+
+            // Scroll gently to alert
+            alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // Instant Booking via WhatsApp redirect with prefilled client details
+        function bookViaWhatsApp() {
+            const name = document.getElementById('clientName').value || 'Customer';
+            const phone = document.getElementById('clientPhone').value || 'Not provided';
+            const service = document.getElementById('clientService').value || 'Salon Services';
+            const location = document.getElementById('serviceLocation').value;
+            const date = document.getElementById('clientDate').value || 'Flexible';
+            const time = document.getElementById('clientTime').value || 'Standard hours';
+            const notes = document.getElementById('clientNotes').value || 'None';
+
+            const message = `Hello Alisha! ✨%0A%0AI would like to book an appointment with Glow by Alisha Beauty & Hair Salon.%0A%0A👤 Name: ${encodeURIComponent(name)}%0A📞 Phone: ${encodeURIComponent(phone)}%0A💅 Service: ${encodeURIComponent(service)}%0A📍 Preference: ${encodeURIComponent(location)}%0A📅 Date: ${encodeURIComponent(date)}%0A⏰ Time Slot: ${encodeURIComponent(time)}%0A📝 Notes: ${encodeURIComponent(notes)}%0A%0APlease confirm my booking!`;
+
+            window.open(`https://wa.me/918962401356?text=${message}`, '_blank');
+        }
+    </script>
+</body>
+</html>
